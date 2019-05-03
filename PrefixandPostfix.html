@@ -93,20 +93,6 @@
             </a>
         </li>
       
-        <li role="presentation" class="tab">
-            <a href="#index" aria-controls="index" role="tab" data-toggle="tab">
-                <i class="glyphicon glyphicon-asterisk"></i>
-                Index
-            </a>
-        </li>
-      
-        <li role="presentation" class="tab">
-            <a href="#search" aria-controls="search" role="tab" data-toggle="tab">
-                <i class="glyphicon glyphicon-search"></i>
-                Search
-            </a>
-        </li>
-      
     </ul>  <!-- /Nav tabs -->
 
     <!-- Tab panes -->
@@ -120,38 +106,6 @@
             
         </div>
       </div>  <!-- /contents-->
-      
-      <div role="tabpanel" class="tab-pane" id="index">
-        <div id="keywords" class="tree-container unselectable"
-            data-url="_keywords.json"
-            data-openlvl="1"
-        >
-            
-        </div>
-      </div>  <!-- /index-->
-      
-      <div role="tabpanel" class="tab-pane" id="search">
-        <div class="search-content">
-          <div class="search-input">
-            <form id="search-form">
-              <div class="form-group">
-                <div class="input-group">
-                  <input type="text" class="form-control" id="input-search" name="input-search" placeholder="Search..." />
-                  <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit">
-                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                    </button>
-                  </span>
-                </div>
-              </div>
-            </form>
-          </div>  <!-- /search-input -->
-          <div class="search-result">
-            <div id="search-info"></div>
-            <div class="tree-container unselectable" id="search-tree"></div>
-          </div>  <!-- /search-result -->
-        </div>  <!-- /search-content -->
-      </div>  <!-- /search-->
       
     </div>  <!-- /Tab panes -->
 
@@ -191,21 +145,19 @@
 <p class="rvps2"><span class="rvts6">A Postfix() will execute </span><span class="rvts16">after</span><span class="rvts6"> the targeted method runs, regardless of any conditional logic being handled inside of the original method.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><a class="rvts11" href="https://github.com/pardeike/Harmony/wiki/Patching" target="_blank">From the Harmony Wiki:</a></p>
-<div class="rvps2"><table width="100%" border="1" cellpadding="1" cellspacing="2" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
+<div class="rvps2"><table width="100%" border="1" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
 <tr valign="top">
-<td style="border-color: #000000; border-style: solid; padding: 1px;"><ul style="text-indent: 0px; padding: 0; margin: 0 0 0 32px; list-style-position: outside; list-style-type: disc;">
-<li class="rvps11"><span class="rvts21">A patch must be a&nbsp;</span><span class="rvts45">static</span><span class="rvts21">&nbsp;method</span></li>
-<li class="rvps12"><span class="rvts21">A prefix patch has a return type of&nbsp;</span><span class="rvts45">void</span><span class="rvts21">&nbsp;or&nbsp;</span><span class="rvts45">bool</span></li>
-<li class="rvps12"><span class="rvts21">A postfix patch has a return type of&nbsp;</span><span class="rvts45">void</span><span class="rvts21">&nbsp;or the return signature must match the type of the&nbsp;</span><span class="rvts45">first</span><span class="rvts21">parameter (passthrough mode)</span></li>
-<li class="rvps12"><span class="rvts21">Patches can use a parameter named&nbsp;</span><span class="rvts45">__instance</span><span class="rvts21">&nbsp;to access the instance value if original method is not static</span></li>
-<li class="rvps12"><span class="rvts21">Patches can use a parameter named&nbsp;</span><span class="rvts45">__result</span><span class="rvts21">&nbsp;to access the returned value (prefixes get default value)</span></li>
-<li class="rvps12"><span class="rvts21">Patches can use a parameter named&nbsp;</span><span class="rvts45">__state</span><span class="rvts21">&nbsp;to store information in the prefix method that can be accessed again in the postfix method. Think of it as a local variable. It can be any type and you are responsible to initialize its value in the prefix</span></li>
-<li class="rvps12"><span class="rvts21">Parameter names starting with three underscores, for example&nbsp;</span><span class="rvts45">___someField</span><span class="rvts21">, can be used to read and write (with 'ref') private fields on the instance that has the same name (minus the underscores)</span></li>
-<li class="rvps12"><span class="rvts21">Patches can define only those parameters they want to access (no need to define all)</span></li>
-<li class="rvps12"><span class="rvts21">Patch parameters must use the&nbsp;</span><span class="rvts45">exact</span><span class="rvts21">&nbsp;same name and type as the original method (</span><span class="rvts46">object</span><span class="rvts21">&nbsp;is ok too)</span></li>
-<li class="rvps12"><span class="rvts21">Patches can either get parameters normally or by declaring any parameter&nbsp;</span><span class="rvts45">ref</span><span class="rvts21">&nbsp;(for manipulation)</span></li>
-<li class="rvps12"><span class="rvts21">To allow patch reusing, one can inject the original method by using a parameter named&nbsp;</span><span class="rvts45">__originalMethod</span></li>
-</ul>
+<td style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps11" style="text-indent: -24px; padding-left: 24px; margin-left: 8px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #24292e; display: inline-block; text-indent: 0px; min-width: 24px;">•</span><span class="rvts21">A patch must be a&nbsp;</span><span class="rvts45">static</span><span class="rvts21">&nbsp;method</span></p>
+<p class="rvps12" style="text-indent: -24px; padding-left: 24px; margin-left: 8px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #24292e; display: inline-block; text-indent: 0px; min-width: 24px;">•</span><span class="rvts21">A prefix patch has a return type of&nbsp;</span><span class="rvts45">void</span><span class="rvts21">&nbsp;or&nbsp;</span><span class="rvts45">bool</span></p>
+<p class="rvps12" style="text-indent: -24px; padding-left: 24px; margin-left: 8px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #24292e; display: inline-block; text-indent: 0px; min-width: 24px;">•</span><span class="rvts21">A postfix patch has a return type of&nbsp;</span><span class="rvts45">void</span><span class="rvts21">&nbsp;or the return signature must match the type of the&nbsp;</span><span class="rvts45">first</span><span class="rvts21">parameter (passthrough mode)</span></p>
+<p class="rvps12" style="text-indent: -24px; padding-left: 24px; margin-left: 8px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #24292e; display: inline-block; text-indent: 0px; min-width: 24px;">•</span><span class="rvts21">Patches can use a parameter named&nbsp;</span><span class="rvts45">__instance</span><span class="rvts21">&nbsp;to access the instance value if original method is not static</span></p>
+<p class="rvps12" style="text-indent: -24px; padding-left: 24px; margin-left: 8px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #24292e; display: inline-block; text-indent: 0px; min-width: 24px;">•</span><span class="rvts21">Patches can use a parameter named&nbsp;</span><span class="rvts45">__result</span><span class="rvts21">&nbsp;to access the returned value (prefixes get default value)</span></p>
+<p class="rvps12" style="text-indent: -24px; padding-left: 24px; margin-left: 8px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #24292e; display: inline-block; text-indent: 0px; min-width: 24px;">•</span><span class="rvts21">Patches can use a parameter named&nbsp;</span><span class="rvts45">__state</span><span class="rvts21">&nbsp;to store information in the prefix method that can be accessed again in the postfix method. Think of it as a local variable. It can be any type and you are responsible to initialize its value in the prefix</span></p>
+<p class="rvps12" style="text-indent: -24px; padding-left: 24px; margin-left: 8px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #24292e; display: inline-block; text-indent: 0px; min-width: 24px;">•</span><span class="rvts21">Parameter names starting with three underscores, for example&nbsp;</span><span class="rvts45">___someField</span><span class="rvts21">, can be used to read and write (with 'ref') private fields on the instance that has the same name (minus the underscores)</span></p>
+<p class="rvps12" style="text-indent: -24px; padding-left: 24px; margin-left: 8px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #24292e; display: inline-block; text-indent: 0px; min-width: 24px;">•</span><span class="rvts21">Patches can define only those parameters they want to access (no need to define all)</span></p>
+<p class="rvps12" style="text-indent: -24px; padding-left: 24px; margin-left: 8px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #24292e; display: inline-block; text-indent: 0px; min-width: 24px;">•</span><span class="rvts21">Patch parameters must use the&nbsp;</span><span class="rvts45">exact</span><span class="rvts21">&nbsp;same name and type as the original method (</span><span class="rvts46">object</span><span class="rvts21">&nbsp;is ok too)</span></p>
+<p class="rvps12" style="text-indent: -24px; padding-left: 24px; margin-left: 8px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #24292e; display: inline-block; text-indent: 0px; min-width: 24px;">•</span><span class="rvts21">Patches can either get parameters normally or by declaring any parameter&nbsp;</span><span class="rvts45">ref</span><span class="rvts21">&nbsp;(for manipulation)</span></p>
+<p class="rvps12" style="text-indent: -24px; padding-left: 24px; margin-left: 8px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #24292e; display: inline-block; text-indent: 0px; min-width: 24px;">•</span><span class="rvts21">To allow patch reusing, one can inject the original method by using a parameter named&nbsp;</span><span class="rvts45">__originalMethod</span></p>
 </td>
 </tr>
 </table>
@@ -213,7 +165,7 @@
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">To better understand the supported parameters, here's a table from the Harmony Wiki:</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<div class="rvps2"><table width="100%" border="1" cellpadding="1" cellspacing="2" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
+<div class="rvps2"><table width="100%" border="1" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
 <tr valign="top">
 <td style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps13"><span class="rvts48">// original method in class Customer</span><br/><span class="rvts49">private</span><span class="rvts50"> </span><span class="rvts51">List</span><span class="rvts50">&lt;</span><span class="rvts49">string</span><span class="rvts50">&gt; </span><span class="rvts51">getNames</span><span class="rvts50">(</span><span class="rvts49">int</span><span class="rvts50"> count, </span><span class="rvts49">out</span><span class="rvts50"> </span><span class="rvts51">Error</span><span class="rvts50"> error)</span><br/><span class="rvts48">// prefix</span><br/><span class="rvts48">// - wants instance, result and count</span><br/><span class="rvts48">// - wants to change count</span><br/><span class="rvts48">// - returns a boolean that controls if original is executed (true) or not (false)</span><br/><span class="rvts50">static bool Prefix(</span><span class="rvts51">Customer</span><span class="rvts50"> __instance, </span><span class="rvts51">List</span><span class="rvts50">&lt;</span><span class="rvts49">string</span><span class="rvts50">&gt; __result, </span><span class="rvts49">ref</span><span class="rvts50"> </span><span class="rvts49">int</span><span class="rvts50"> count)</span><br/><span class="rvts48">// postfix</span><br/><span class="rvts48">// - wants result and error</span><br/><span class="rvts48">// - does not change any of those</span><br/><span class="rvts50">static void Postfix(</span><span class="rvts51">List</span><span class="rvts50">&lt;</span><span class="rvts49">string</span><span class="rvts50">&gt; __result, </span><span class="rvts51">Error</span><span class="rvts50"> error)</span></p>
 </td>
@@ -231,7 +183,7 @@
 <p class="rvps6"><span class="rvts6"><br/></span></p>
 <p class="rvps6"><span class="rvts6">In our Prefix, we define our Prefix as: </span><span class="rvts24">static</span><span class="rvts26"> </span><span class="rvts24">bool</span><span class="rvts26"> Prefix(EntityAlive __instance)</span></p>
 <p class="rvps6"><span class="rvts6"><br/></span></p>
-<div class="rvps6"><table width="100%" border="1" cellpadding="1" cellspacing="2" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
+<div class="rvps6"><table width="100%" border="1" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
 <tr valign="top">
 <td style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps6"><span class="rvts26"> &nbsp; &nbsp;[HarmonyPatch(</span><span class="rvts24">typeof</span><span class="rvts26">(EntityAlive))]</span></p>
 <p class="rvps6"><span class="rvts26"> &nbsp; &nbsp;[HarmonyPatch(</span><span class="rvts25">"SetAttackTarget"</span><span class="rvts26">)]</span></p>
@@ -260,7 +212,7 @@
 <p class="rvps6"><span class="rvts33"><br/></span></p>
 <p class="rvps6"><span class="rvts6">The below example was designed to prevent the TipWindow from showing a tip on the screen. We define that the method we want to target is in the XUiC_TipWindow class, and it's the ShowTip method. There's only one ShowTip() method in the class, so we do not need to specify the parameter signature.</span></p>
 <p class="rvps6"><span class="rvts6"><br/></span></p>
-<div class="rvps6"><table width="100%" border="1" cellpadding="1" cellspacing="2" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
+<div class="rvps6"><table width="100%" border="1" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
 <tr valign="top">
 <td style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps6"><span class="rvts26"> &nbsp; &nbsp;</span><span class="rvts30">// Removes the Tool Tips for Journal</span></p>
 <p class="rvps6"><span class="rvts26"> &nbsp; &nbsp;[HarmonyPatch(</span><span class="rvts24">typeof</span><span class="rvts26">(XUiC_TipWindow))]</span></p>
@@ -286,7 +238,7 @@
 <p class="rvps6"><span class="rvts33"><br/></span></p>
 <p class="rvps6"><span class="rvts6">We see that it has a WorldBase, BlockPlacement and EntityAlive as parameters. For the purpose of the mod, preventing placing blocks while in the air, we only want to access the EntityAlive. This is so we can check what the EntityAlive is actually doing at the time of the call. Rather than placing all the parameters of the method, and not using them, Harmony allows us to specify just the parameters we want to use. </span></p>
 <p class="rvps6"><span class="rvts6"><br/></span></p>
-<div class="rvps6"><table width="100%" border="1" cellpadding="1" cellspacing="2" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
+<div class="rvps6"><table width="100%" border="1" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
 <tr valign="top">
 <td style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps6"><span class="rvts26"> &nbsp; &nbsp;</span><span class="rvts30">// Returns true for the default PlaceBlock code to execute. If it returns false, it won't execute it at all.</span></p>
 <p class="rvps6"><span class="rvts26"> &nbsp; &nbsp;</span><span class="rvts24">static</span><span class="rvts26"> </span><span class="rvts24">bool</span><span class="rvts26"> Prefix(EntityAlive _ea)</span></p>
@@ -327,7 +279,7 @@
 <p class="rvps6"><span class="rvts33"><br/></span></p>
 <p class="rvps6"><span class="rvts6">To load custom entity's, we need to add in a hook to the EntityFactory. For this example, we are going to use a Postfix(). That is, we are going to let the original method run, look at its return type to see if it's something we want. and change it if necessary.</span></p>
 <p class="rvps6"><span class="rvts6"><br/></span></p>
-<div class="rvps6"><table width="100%" border="1" cellpadding="1" cellspacing="2" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
+<div class="rvps6"><table width="100%" border="1" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
 <tr valign="top">
 <td style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps6"><span class="rvts26"> &nbsp; &nbsp;</span><span class="rvts24">static</span><span class="rvts26"> Entity Postfix(Entity __result, GameObject _gameObject, </span><span class="rvts24">string</span><span class="rvts26"> _className)</span></p>
 <p class="rvps6"><span class="rvts26"> &nbsp; &nbsp;{</span></p>

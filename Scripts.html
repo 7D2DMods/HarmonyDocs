@@ -93,20 +93,6 @@
             </a>
         </li>
       
-        <li role="presentation" class="tab">
-            <a href="#index" aria-controls="index" role="tab" data-toggle="tab">
-                <i class="glyphicon glyphicon-asterisk"></i>
-                Index
-            </a>
-        </li>
-      
-        <li role="presentation" class="tab">
-            <a href="#search" aria-controls="search" role="tab" data-toggle="tab">
-                <i class="glyphicon glyphicon-search"></i>
-                Search
-            </a>
-        </li>
-      
     </ul>  <!-- /Nav tabs -->
 
     <!-- Tab panes -->
@@ -120,38 +106,6 @@
             
         </div>
       </div>  <!-- /contents-->
-      
-      <div role="tabpanel" class="tab-pane" id="index">
-        <div id="keywords" class="tree-container unselectable"
-            data-url="_keywords.json"
-            data-openlvl="1"
-        >
-            
-        </div>
-      </div>  <!-- /index-->
-      
-      <div role="tabpanel" class="tab-pane" id="search">
-        <div class="search-content">
-          <div class="search-input">
-            <form id="search-form">
-              <div class="form-group">
-                <div class="input-group">
-                  <input type="text" class="form-control" id="input-search" name="input-search" placeholder="Search..." />
-                  <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit">
-                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                    </button>
-                  </span>
-                </div>
-              </div>
-            </form>
-          </div>  <!-- /search-input -->
-          <div class="search-result">
-            <div id="search-info"></div>
-            <div class="tree-container unselectable" id="search-tree"></div>
-          </div>  <!-- /search-result -->
-        </div>  <!-- /search-content -->
-      </div>  <!-- /search-->
       
     </div>  <!-- /Tab panes -->
 
@@ -186,7 +140,7 @@
 <p class="rvps2"><span class="rvts6">Scripts are C# scripts which adds new classes to the game, and can be referenced from either other scripts or through XML hooks.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">This example script adds a new &lt;requirement&gt; for the buffs.xml file. DMT will compile this script into the Mods.dll.</span></p>
-<div class="rvps2"><table width="100%" border="1" cellpadding="1" cellspacing="2" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
+<div class="rvps2"><table width="100%" border="1" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
 <tr valign="top">
 <td style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts24">using</span><span class="rvts26"> System;</span></p>
 <p class="rvps2"><span class="rvts24">using</span><span class="rvts26"> System.Xml;</span></p>
@@ -229,7 +183,7 @@
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">While DMT will take care of loading that script into memory, you will need to add an XML XPath file to enable it.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<div class="rvps2"><table width="100%" border="1" cellpadding="1" cellspacing="2" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
+<div class="rvps2"><table width="100%" border="1" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
 <tr valign="top">
 <td style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts26"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts26"> </span><span class="rvts26"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts26">&lt;</span><span class="rvts31">requirement </span><span class="rvts28">name</span><span class="rvts31">=</span><span class="rvts24">"RequirementSameFactionSDX, Mods"</span><span class="rvts31"> </span><span class="rvts28">faction</span><span class="rvts31">=</span><span class="rvts24">"animalsCows"</span><span class="rvts31"> /</span><span class="rvts26">&gt; &nbsp;</span><span class="rvts30">&lt;!-- Requirement will only pass if the entity belongs to this faction --&gt;</span></p>
 </td>
@@ -241,16 +195,12 @@
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">There are a few things to note here. </span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
-<li class="rvps2"><span class="rvts6">The loading of custom classes is different depending on the context in which you are trying to change. For requirements, the class reference is in the "name" attribute. In others, it may be "action", or "value". </span></li>
-</ul>
+<p class="rvps2" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000; display: inline-block; text-indent: 0px; min-width: 24px;">•</span><span class="rvts6">The loading of custom classes is different depending on the context in which you are trying to change. For requirements, the class reference is in the "name" attribute. In others, it may be "action", or "value". </span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
-<li class="rvps2"><span class="rvts6">The "name" value may be different depending on what kind of class you are trying to load. &nbsp;The game will do a GetType() on the name to find the appropriate class name. However, some hooks in vanilla make assumptions about what the class is called.</span></li>
-</ul>
+<p class="rvps2" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000; display: inline-block; text-indent: 0px; min-width: 24px;">•</span><span class="rvts6">The "name" value may be different depending on what kind of class you are trying to load. &nbsp;The game will do a GetType() on the name to find the appropriate class name. However, some hooks in vanilla make assumptions about what the class is called.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">In this example, our class is called MinEventActionPlayerLevelSDX:</span></p>
-<div class="rvps2"><table width="100%" border="1" cellpadding="1" cellspacing="2" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
+<div class="rvps2"><table width="100%" border="1" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
 <tr valign="top">
 <td style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts24">using</span><span class="rvts26"> System.Xml;</span></p>
 <p class="rvps2"><span class="rvts24">using</span><span class="rvts26"> UnityEngine;</span></p>
@@ -282,7 +232,7 @@
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">In MinEventActionBase, which is the class that loads the MinEventAction calls from the buffs.xml, we look for the GetType() call:</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<div class="rvps2"><table width="100%" border="1" cellpadding="1" cellspacing="2" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
+<div class="rvps2"><table width="100%" border="1" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
 <tr valign="top">
 <td style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts32">Type</span><span class="rvts33">&nbsp;</span><span class="rvts34">type</span><span class="rvts33">&nbsp;</span><span class="rvts35">=</span><span class="rvts33">&nbsp;</span><span class="rvts32">Type</span><span class="rvts35">.</span><span class="rvts36">GetType</span><span class="rvts33">(</span><span class="rvts37">"MinEventAction"</span><span class="rvts33">&nbsp;</span><span class="rvts35">+</span><span class="rvts33">&nbsp;</span><span class="rvts38">_element</span><span class="rvts35">.</span><span class="rvts39">GetAttribute</span><span class="rvts33">(</span><span class="rvts37">"action"</span><span class="rvts33">));</span></p>
 </td>
@@ -294,7 +244,7 @@
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">Notice it adds "MinEventAction" to the start of the "action" attribute. We need to include that as part of the class name (</span><span class="rvts29">MinEventActionPlayerLevelSDX</span><span class="rvts6"> ), but since the game is appending it, we do not add it as a reference to the XML:</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<div class="rvps2"><table width="100%" border="1" cellpadding="1" cellspacing="2" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
+<div class="rvps2"><table width="100%" border="1" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
 <tr valign="top">
 <td style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts26"> &nbsp;&lt;triggered_effect trigger=</span><span class="rvts25">"onSelfBuffStart"</span><span class="rvts26"> action=</span><span class="rvts25">"PlayerLevelSDX, Mods"</span><span class="rvts26"> target=</span><span class="rvts25">"self"</span><span class="rvts26"> &nbsp;/&gt; </span></p>
 </td>
