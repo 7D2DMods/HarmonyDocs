@@ -1,2 +1,0 @@
-# HarmonyDocs
-Harmony Documentation
